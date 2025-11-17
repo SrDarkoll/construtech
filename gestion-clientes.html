@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Clientes - ConstruTech</title>
+  <script type="module" src="js/authGuard.js" defer></script>
+  <script type="module" src="js/clientes.js" defer></script>
+  <link rel="stylesheet" href="./css/gestion-clientes.css">
+</head>
+<body>
+  <h2>Gestión de Clientes</h2>
+
+  <form id="formCliente">
+    <input type="text" id="nombre" placeholder="Nombre del cliente" required>
+    <input type="text" id="telefono" placeholder="Teléfono" required>
+    <input type="text" id="direccion" placeholder="Dirección" required>
+    <button type="submit">Agregar cliente</button>
+  </form>
+
+  <h3>Lista de clientes</h3>
+  <ul id="listaClientes"></ul>
+
+  <button id="logoutBtn">Cerrar sesión</button>
+</body>
+</html>
