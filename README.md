@@ -58,7 +58,7 @@ Configure Firebase (only if using local backend)
 Iniciar el server
 
 ```bash
-  npm run start
+  npm start
    se ejecutara  en http://localhost:3000
 
 ```
