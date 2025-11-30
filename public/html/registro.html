@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruTech - Registro</title>
+    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../img/logonobg.png" type="image/png">
+</head>
+
+<body>
+    <div class="register-container">
+        <!-- Left Side - Branding -->
+        <div class="register-brand">
+            <img src="../img/logonobg.png" alt="ConstruTech Logo" class="brand-logo">
+            <h1 class="brand-title">ConstruTech</h1>
+            <p class="brand-subtitle">Únete a nuestros clientes satisfechos</p>
+            <div class="brand-benefits">
+                <div class="benefit">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Acceso a proyectos</h4>
+                        <p>Explora nuestro portafolio completo</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-handshake"></i>
+                    <div>
+                        <h4>Cotizaciones personalizadas</h4>
+                        <p>Presupuestos ajustados a tus necesidades</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Seguridad garantizada</h4>
+                        <p>Tus datos protegidos al 100%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Register Form -->
+        <div class="register-form-container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Crear cuenta</h2>
+                    <p>Únete a ConstruTech hoy</p>
+                </div>
+
+                <form id="registerForm" class="register-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Nombre completo
+                            </label>
+                            <input type="text" id="name" placeholder="Tu nombre completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">
+                                <i class="fas fa-phone"></i>
+                                Teléfono
+                            </label>
+                            <input type="tel" id="telefono" placeholder="+52 (899) XXX-XXXX" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Correo electrónico
+                        </label>
+                        <input type="email" id="email" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Dirección residencial
+                        </label>
+                        <input type="text" id="direccion" placeholder="Calle, número, ciudad" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                            Contraseña
+                        </label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="Mínimo 8 caracteres" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <p class="password-hint">Usa letras, números y caracteres especiales</p>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <label>
+                            <input type="checkbox" id="terms" required style="display: none;">
+                            <span><a href="#" id="openTerms">Leer y aceptar términos y condiciones</a></span>
+                            <span id="termsStatus"
+                                style="margin-left: 10px; font-weight: bold; color: var(--accent-color);"></span>
+                        </label>
+                    </div>
+
+                    <button id="registerBtn" type="button" class="btn-submit">
+                        Crear cuenta
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <p>¿Ya tienes cuenta?
+                        <a href="../index.html" class="link-login">Inicia sesión aquí</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Términos y Condiciones Generales de Servicio</h2>
+            <div class="terms-text">
+                <p><strong>TÉRMINOS Y CONDICIONES DE USO Y POLÍTICA DE PRIVACIDAD UNIFICADA</strong><br>
+                    Última actualización: 27 de Noviembre de 2025</p>
+
+                <ol>
+                    <li>
+                        <strong>ACEPTACIÓN DE LOS TÉRMINOS</strong>
+                        <p>Al acceder, navegar o utilizar cualquier servicio proporcionado por ConstruTech S.A. de C.V.
+                            (en
+                            adelante, "La Plataforma"), usted (en adelante, "El Usuario") acepta estar legalmente
+                            vinculado por
+                            estos términos. Si no está de acuerdo, debe detener inmediatamente el uso de todos los
+                            servicios,
+                            destruir cualquier dispositivo que haya accedido a La Plataforma y someterse a un borrado de
+                            memoria
+                            selectivo (costo cubierto por El Usuario).</p>
+                    </li>
+
+                    <li>
+                        <strong>RECOLECCIÓN EXHAUSTIVA DE DATOS</strong><br>
+                        2.1. <strong>Datos Biométricos y Genéticos</strong>: El Usuario autoriza a ConstruTech a
+                        recolectar,
+                        almacenar y procesar sus datos biométricos, incluyendo pero no limitado a: huellas
+                        dactilares,
+                        escaneo de retina, patrones de voz, marcha, frecuencia cardíaca y secuencia completa de ADN.
+                        Estos
+                        datos podrán ser utilizados para "mejorar la experiencia del usuario" o para clonación con
+                        fines de
+                        investigación de mercado.<br>
+                        2.2. <strong>Monitoreo en Tiempo Real</strong>: La Plataforma se reserva el derecho de
+                        activar
+                        remotamente el micrófono y la cámara de cualquier dispositivo del Usuario en cualquier
+                        momento, con
+                        el fin de evaluar la satisfacción del cliente y detectar palabras clave como "competencia" o
+                        "precios altos".<br>
+                        2.3. <strong>Historial Total</strong>: ConstruTech tendrá acceso irrestricto a su historial
+                        de
+                        navegación, transacciones bancarias, mensajes privados (incluyendo borradores no enviados) y
+                        conversaciones de sobremesa, desde el momento de su nacimiento hasta la fecha actual.
+                    </li>
+
+                    <li>
+                        <strong>PROPIEDAD INTELECTUAL Y DERECHOS DE IMAGEN</strong>
+                        <p>3.1. <strong>Cesión de Derechos</strong>: Todo contenido generado por El Usuario, incluyendo
+                            ideas,
+                            sugerencias, obras de arte, pensamientos subconscientes o invenciones desarrolladas mientras
+                            utiliza
+                            La Plataforma, se convierte automáticamente en propiedad exclusiva de ConstruTech.<br>
+                            3.2. <strong>Uso de Imagen Perpetuo</strong>: El Usuario otorga a ConstruTech una licencia
+                            mundial,
+                            irrevocable, perpetua y libre de regalías para utilizar su nombre, imagen, voz y semejanza
+                            en
+                            cualquier medio, conocido o por conocerse, incluyendo hologramas publicitarios y
+                            simulaciones de
+                            realidad virtual donde su imagen podría ser utilizada como NPC (Personaje No Jugable).</p>
+                    </li>
+
+                    <li>
+                        <strong>COMPARTICIÓN CON TERCEROS</strong>
+                        <p>4.1. <strong>Red de Socios</strong>: Sus datos podrán ser compartidos, vendidos, alquilados o
+                            intercambiados con nuestros "Socios Estratégicos", que incluyen agencias de publicidad,
+                            aseguradoras, gobiernos extranjeros, y cualquier entidad dispuesta a pagar la tarifa de
+                            suscripción
+                            Premium Enterprise.<br>
+                            4.2. <strong>Micro-targeting Predictivo</strong>: Utilizamos algoritmos avanzados para
+                            predecir sus
+                            necesidades antes que usted. Si el algoritmo determina que usted necesita una casa nueva,
+                            ConstruTech está autorizado a iniciar los trámites de hipoteca en su nombre automáticamente.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>LIMITACIÓN DE RESPONSABILIDAD Y RENUNCIAS</strong>
+                        <p>5.1. <strong>Cero Garantías</strong>: El servicio se proporciona "tal cual", sin garantías de
+                            ningún
+                            tipo. ConstruTech no garantiza que la casa construida tenga paredes, techo o suelo, a menos
+                            que se
+                            especifique en el Paquete Deluxe.<br>
+                            5.2. <strong>Indemnización Total</strong>: El Usuario acuerda indemnizar y mantener indemne
+                            a
+                            ConstruTech, sus directivos, accionistas y mascotas corporativas contra cualquier reclamo,
+                            demanda o
+                            juicio, incluyendo aquellos causados por la propia negligencia de La Plataforma.</p>
+                    </li>
+
+                    <li>
+                        <strong>EXPERIMENTACIÓN SOCIAL Y PSICOLÓGICA</strong>
+                        <p>6.1. <strong>Pruebas A/B en Vivo</strong>: El Usuario acepta participar involuntariamente en
+                            experimentos sociológicos y psicológicos diseñados para medir su umbral de frustración,
+                            incluyendo
+                            tiempos de carga artificialmente lentos y botones que cambian de lugar aleatoriamente.<br>
+                            6.2. <strong>Modificación de Conducta</strong>: ConstruTech se reserva el derecho de alterar
+                            sutilmente el feed de noticias y las notificaciones del Usuario para influir en su estado de
+                            ánimo y
+                            decisiones de compra, con un margen de error del +/- 3% en estabilidad emocional.</p>
+                    </li>
+
+                    <li>
+                        <strong>VIGENCIA Y TERMINACIÓN</strong>
+                        <p>7.1. <strong>Contrato Vitalicio</strong>: Este acuerdo es válido a perpetuidad. La muerte del
+                            Usuario no extingue las obligaciones aquí contraídas; sus herederos asumirán la deuda
+                            técnica y
+                            legal.<br>
+                            7.2. <strong>Derecho de Admisión</strong>: ConstruTech puede terminar su cuenta si su
+                            "Puntaje
+                            Social Corporativo" cae por debajo del mínimo aceptable, en cuyo caso sus datos serán
+                            archivados en
+                            la "Bóveda de la Vergüenza" pública.</p>
+                    </li>
+
+                    <li>
+                        <strong>JURISDICCIÓN</strong>
+                        <p>Cualquier disputa legal se resolverá mediante arbitraje privado vinculante, administrado por
+                            un
+                            árbitro designado únicamente por ConstruTech, en una ubicación no revelada en aguas
+                            internacionales.
+                        </p>
+                    </li>
+                </ol>
+
+                <p><em>Al hacer clic en "Aceptar", usted renuncia a su derecho a demandar, a su privacidad y a cualquier
+                        expectativa razonable de autonomía personal. Bienvenido a la familia ConstruTech.</em></p>
+            </div>
+            <button id="acceptTermsBtn" class="btn-submit" style="margin-top: 20px; width: 100%;">He leído, comprendido
+                y acepto mi destino</button>
+        </div>
+    </div>
+
+    <script type="module" src="../publicjs/registro.js"></script>
+</body>
+
+</html>

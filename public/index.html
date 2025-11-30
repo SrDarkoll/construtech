@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruTech - Ingreso</title>
+    <link rel="stylesheet" href="./css/iniciosesion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./img/logonobg.png" type="image/png">
+</head>
+
+<body>
+    <div class="login-container">
+        <!-- Left Side - Branding -->
+        <div class="login-brand">
+            <div class="brand-content">
+                <img src="./img/logonobg.png" alt="ConstruTech Logo" class="brand-logo">
+                <h1 class="brand-title">ConstruTech</h1>
+
+                <p class="brand-subtitle">Soluciones de remodelación modernas y confiables</p>
+                <br>
+                <div class="brand-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Diseños profesionales</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Equipo especializado</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Garantía de calidad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="login-form-container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Bienvenido</h2>
+                    <p>Inicia sesión en tu cuenta</p>
+                </div>
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Correo electrónico
+                        </label>
+                        <input type="email" id="email" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                            Contraseña
+                        </label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <span>Recuérdame</span>
+                        </label>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button id="loginBtn" type="button" class="btn-submit">
+                        Iniciar sesión
+                    </button>
+                </form>
+
+                <div class="divider">
+                    <span>O</span>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Google
+                    </button>
+                </div>
+
+                <div class="form-footer">
+                    <p>¿No tienes cuenta?
+                        <a href="./html/registro.html" class="link-register">Regístrate aquí</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./publicjs/iniciosesion.js"></script>
+    </div>
+
+    <!-- Modal personalizado para recuperación de contraseña -->
+    <div id="resetModal" class="modal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div class="modal-content"
+            style="max-width:420px; margin:60px auto; padding:40px; border-radius:20px; position:relative; background:white; box-shadow:0 25px 80px rgba(0, 0, 0, 0.35); animation:slideDown 0.3s ease;">
+            <span class="close-reset"
+                style="position:absolute; right:20px; top:15px; font-size:28px; cursor:pointer; color:#999; transition:color 0.3s;">&times;</span>
+            <div style="text-align:center; margin-bottom:30px;">
+                <i class="fas fa-lock" style="font-size:40px; color:#e74c3c; margin-bottom:15px;"></i>
+                <h2 style="margin:10px 0; color:#2c3e50; font-size:24px; font-weight:700;">Recuperar contraseña</h2>
+                <p style="color:#666; font-size:14px; margin:5px 0 0 0;">Te enviaremos un enlace para restablecer tu
+                    contraseña</p>
+            </div>
+            <form id="resetForm">
+                <label for="resetEmail"
+                    style="display:block; color:#2c3e50; font-weight:600; margin-bottom:8px; font-size:14px;">
+                    <i class="fas fa-envelope" style="margin-right:8px; color:#e74c3c;"></i>Correo electrónico
+                </label>
+                <input type="email" id="resetEmail" required placeholder="tu@email.com"
+                    style="width:100%; padding:12px 15px; margin-bottom:20px; border:2px solid #ecf0f1; border-radius:12px; font-size:14px; box-sizing:border-box; transition:all 0.3s; font-family:inherit;">
+                <button type="submit" class="btn-submit"
+                    style="width:100%; padding:12px; background:linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color:white; border:none; border-radius:12px; font-size:16px; font-weight:600; cursor:pointer; transition:all 0.3s; box-sizing:border-box;">Enviar
+                    enlace</button>
+            </form>
+            <div id="resetMsg"
+                style="margin-top:15px; font-size:13px; text-align:center; padding:10px; border-radius:8px;"></div>
+            <p style="text-align:center; color:#999; font-size:12px; margin-top:20px;">¿Recordaste tu contraseña? <a
+                    href="./index.html" class="forgot-password"
+                    style="color:#e74c3c; text-decoration:none; font-weight:600;">Volver al login</a></p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #resetModal {
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .close-reset:hover {
+            color: #2c3e50 !important;
+            transform: scale(1.2);
+        }
+
+        #resetForm input:focus {
+            outline: none;
+            border-color: #e74c3c !important;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+            background: #fafafa;
+        }
+
+        #resetForm button:hover {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.25);
+        }
+
+        #resetForm button:active {
+            transform: translateY(0);
+        }
+
+        #resetMsg.text-success {
+            background: #d4edda;
+            color: #155724;
+            border-left: 4px solid #27ae60;
+        }
+
+        #resetMsg.text-error {
+            background: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #e74c3c;
+        }
+    </style>
+</body>
+
+</html>

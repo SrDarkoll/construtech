@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - ConstruTech</title>
+    <link rel="icon" href="../img/logonobg.png" type="image/png">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script type="module" src="../publicjs/authGuard.js" defer></script>
+    <script type="module" src="../publicjs/dashboard.js" defer></script>
+</head>
+
+<body>
+    <!-- Overlay de carga para proteger la vista hasta verificar auth -->
+    <div id="auth-loading-overlay"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div class="loader"
+            style="border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;">
+        </div>
+        <h3 style="margin-top: 20px; font-family: sans-serif; color: #333;">Verificando permisos...</h3>
+    </div>
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- Modal de Solicitudes -->
+    <div id="solicitudesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-solicitudes">&times;</span>
+            <h3 style="margin-bottom: 15px;">Solicitudes de Contacto</h3>
+            <div id="listaSolicitudes" class="solicitudes-lista">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../img/logonobg.png" alt="ConstruTech Logo" class="logo"
+                    onclick="window.location.href='catalogo.html'" style="cursor: pointer;">
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-section="resumen">
+                    <i class="fas fa-home"></i>
+                    Resumen
+                </a>
+                <a href="#" class="nav-item" data-section="clientes">
+                    <i class="fas fa-users"></i>
+                    Clientes
+                </a>
+                <a href="#" class="nav-item" data-section="proyectos">
+                    <i class="fas fa-project-diagram"></i>
+                    Proyectos
+                </a>
+                <a href="#" class="nav-item" data-section="administradores">
+                    <i class="fas fa-user-shield"></i>
+                    Administradores
+                </a>
+            </nav>
+            <div class="user-section">
+                <div class="user-info">
+                    <img src="../img/admin.svg" alt="Administrador" class="admin-avatar">
+                    <span class="user-name">Administrador</span>
+                </div>
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Cerrar sesión
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1 id="section-title">Dashboard</h1>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">0</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Sections -->
+            <div class="dashboard-sections">
+                <!-- Resumen Section -->
+                <section id="resumen" class="section active">
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <h3>Proyectos Activos</h3>
+                            <p id="proyectosCount" class="stat-number">12</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Clientes Totales</h3>
+                            <p id="clientesCount" class="stat-number">45</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Presupuestos Pendientes</h3>
+                            <p id="presupuestosCount" class="stat-number">8</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Ingresos Mensuales</h3>
+                            <p id="ingresosMensuales" class="stat-number">$85,000</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Clientes Section -->
+                <section id="clientes" class="section">
+                    <div class="section-header">
+                        <h2>Gestión de Clientes</h2>
+                        <button class="add-btn" id="addClienteBtn">
+                            <i class="fas fa-plus"></i>
+                            Nuevo Cliente
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Teléfono</th>
+                                    <th>Email</th>
+                                    <th>Dirección</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientesTableBody">
+                                <!-- Se llenará dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Modal para nuevo/editar cliente -->
+                    <div id="clienteModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Nuevo Cliente</h2>
+                            <form id="clienteForm">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" id="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="tel" id="telefono" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="direccion">Dirección</label>
+                                    <input type="text" id="direccion" required>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="save-btn">Guardar</button>
+                                    <button type="button" class="cancel-btn">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Proyectos Section -->
+                <section id="proyectos" class="section">
+                    <div class="section-header">
+                        <h2>Gestión de Proyectos</h2>
+                        <button class="add-btn" id="addProyectoBtn">
+                            <i class="fas fa-plus"></i>
+                            Nuevo Proyecto
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha Inicio</th>
+                                    <th>Duración</th>
+                                    <th>Presupuesto</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="proyectosTableBody">
+                                <!-- Se llenará dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Modal para nuevo/editar proyecto -->
+                    <div id="proyectoModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Nuevo Proyecto</h2>
+                            <form id="proyectoForm">
+                                <div class="form-group">
+                                    <label for="nombreProyecto">Nombre del Proyecto</label>
+                                    <input type="text" id="nombreProyecto" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clienteProyecto">Cliente</label>
+                                    <select id="clienteProyecto" required>
+                                        <!-- Se cargará dinámicamente -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fechaInicio">Fecha de Inicio</label>
+                                    <input type="date" id="fechaInicio" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="duracion">Duración (meses)</label>
+                                    <input type="number" id="duracion" min="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="presupuesto">Presupuesto</label>
+                                    <input type="number" id="presupuesto" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion">Descripción</label>
+                                    <textarea id="descripcion" rows="4"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="save-btn">Guardar</button>
+                                    <button type="button" class="cancel-btn">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Administradores Section -->
+                <section id="administradores" class="section">
+                    <div class="section-header">
+                        <h2>Gestión de Administradores</h2>
+                        <button class="add-btn" id="addAdminBtn">
+                            <i class="fas fa-plus"></i>
+                            Nuevo Administrador
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="administradoresTableBody">
+                                <!-- Se llenará dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Modal para nuevo/editar administrador -->
+                    <div id="adminModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Nuevo Administrador</h2>
+                            <form id="adminForm">
+                                <div class="form-group">
+                                    <label for="adminNombre">Nombre</label>
+                                    <input type="text" id="adminNombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adminEmail">Email</label>
+                                    <input type="email" id="adminEmail" required>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="save-btn">Guardar</button>
+                                    <button type="button" class="cancel-btn">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+
+</html>

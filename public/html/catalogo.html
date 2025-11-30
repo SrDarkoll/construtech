@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - ConstruTech</title>
+    <link rel="stylesheet" href="../css/catalogo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../img/logonobg.png" type="image/png">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#inicio" class="logo">
+                    <img src="../img/logonobg.png" alt="ConstruTech Logo" class="logo-img">
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+
+                    <li class="mega-parent">
+                        <a href="#" class="nav-link">Proyectos <i class="fas fa-chevron-down"></i></a>
+
+                        <!-- MENU -->
+                        <div class="mega-menu">
+                            <div class="mega-section">
+                                <h3>Categorías</h3>
+                                <a href="#disenos" data-cat="residencial">Residencial</a>
+                                <a href="#disenos" data-cat="sala">Salas</a>
+                                <a href="#disenos" data-cat="cocina">Cocinas</a>
+                                <a href="#disenos" data-cat="banos">Baños</a>
+                                <div class="categorias-menu">
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </li>
+
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Remodela Tu Hogar Ideal</h1>
+                <p class="hero-subtitle">Diseños modernos y de calidad para transformar tu espacio</p>
+                <a href="#disenos" class="cta-button">
+                    <span>Explorar Proyectos</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- Proyectos Section -->
+        <section id="disenos" class="proyectos-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" id="tituloCategoria">Selecciona una Categoría</h2>
+                    <p class="section-subtitle">Explora los proyectos según la categoría seleccionada</p>
+
+                    <!-- Botones de Categoría -->
+                    <div class="category-filters"
+                        style="display: flex; justify-content: center; gap: 15px; margin: 30px 0; flex-wrap: wrap;">
+                        <button class="btn-cat-filter" data-cat="residencial"
+                            style="padding: 12px 30px; border-radius: 30px; border: none; background-color: #2c3e50; color: white; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Residencial</button>
+                        <button class="btn-cat-filter" data-cat="sala"
+                            style="padding: 12px 30px; border-radius: 30px; border: none; background-color: #2c3e50; color: white; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Salas</button>
+                        <button class="btn-cat-filter" data-cat="cocina"
+                            style="padding: 12px 30px; border-radius: 30px; border: none; background-color: #2c3e50; color: white; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Cocinas</button>
+                        <button class="btn-cat-filter" data-cat="banos"
+                            style="padding: 12px 30px; border-radius: 30px; border: none; background-color: #2c3e50; color: white; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Baños</button>
+                    </div>
+                </div>
+
+                <!-- CONTENEDOR GENERAL -->
+                <div id="catalogo-container">
+
+                    <!-- CATEGORÍA: RESIDENCIAL -->
+                    <div class="categoria" id="cat-residencial" style="display:none;">
+                        <h3 class="categoria-titulo">Residencial</h3>
+
+                        <div class="proyectos-grid">
+                            <!--TARJETAS -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\remoledaion cuarto3.jpg" alt="Residencial" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Construcción cuarto pequeño</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">construcción de un cuarto pequeño desde cero incluye
+                                        acabados, vitropiso, pintura en el interior, marcos para puertas y ventanas,
+                                        electricidad. Usted puede escojer el diseño. .</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$15,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 1 mes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\iluminacion cuarto rosa.jpg" alt="Residencial" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Remoledacion cuarto</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Remoledacion de cuarto pequeño, incluye pintura en
+                                        interior e exterior, electricidad e iluminacion, vitropiso y acabados. Usted
+                                        puede seleccionar el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$2,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 Semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\cuarto impermializable.jpg" alt="Residencial" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Imperniabilizable</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Imperniabilizable de cuartos, incluye limpieza de techo
+                                        y pegamentos para grietas y goteras</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$ 120 MXN x metro cuadrado</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 5 dias aprox</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\contruccion barda larga.jpg" alt="Residencial" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Construccion de barda larga</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description"> Construcción de barda larga, usted decide el diseño, no
+                                        incluye acabados.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$15,000 MXN (depende de los metros cuadrados) </span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 3 Semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\constrccion casa-´-poton.jpg" alt="Residencial" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Terraza con loza</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description"> Amplamiento de terraza con losa, incluye acabados,
+                                        vitropiso para exteriores, pintura exterior(no incluye porton).</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$25,000 MXN (depende de los metros cuadrados) </span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 meses aprox</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\barda hogar.jpg" alt="Residencial" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Barda hogar</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description"> Construccion de una barda hogar. Incluye acabados,
+                                        pintura exterior. Usted puede seleccionar el diseño</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$10,000 MXN (depende de los metros cuadrados) </span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 3 semanas aprox</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\azulejo cuarto.jpg" alt="Residencial" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">vitropiso cuarto</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description"> Implementacion de vitropiso en cuarto, incluye zoplo,
+                                        boquilla. Usted puede escojer el diseño</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$6,000 MXN (depende de los metros cuadrados) </span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 semanas aprox</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--CATEGORÍA: SALAS -->
+                    <div class="categoria" id="cat-sala" style="display:none;">
+                        <h3 class="categoria-titulo">Salas</h3>
+
+                        <div class="proyectos-grid">
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\sala1.jpg" alt="Sala" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Sala Mediana</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Diseño simple elegante de una sala mediana, con
+                                        vitropiso y paredes pintadas con accesorios de iluminacion. Usted puede
+                                        seleccionar el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$12,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 1 mes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\sala 2.jpg" alt="Sala" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Sala Mediana simple</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Diseño simple elegante de una sala mediana, con
+                                        vitropiso y paredes pintadas sin accesorios, con marco para puerta y pasillo a
+                                        recamaras. Usted puede seleccionar el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$15,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 1 mes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\sala3.jpg" alt="Sala" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Sala pequeña simple</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Diseño simple de una sala pequeña, con vitropiso y
+                                        paredes pintadas sin accesorios, con marco para ventanas. Usted puede
+                                        seleccionar el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$8,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 3 semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\sala4.jpg" alt="Sala" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Sala chica a grande</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Diseño simple de una sala pequeña que puede amplearse
+                                        hacia la cocina, con vitropiso y paredes pintadas con accesorios de iluminación
+                                        (no incluye muebles ni aparatos electricos), con marco para ventanas. Usted
+                                        puede seleccionar el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$10,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 4 semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\sala5.jpg" alt="Sala" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Sala chica larga</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Diseño simple de una sala pequeña con dimensiones largas
+                                        apropiada a las casa de infonavit, con vitropiso y paredes pintadas con
+                                        accesorios de iluminación (no incluye muebles ni aparatos electricos), con marco
+                                        para ventanas. Usted puede seleccionar el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$9,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 4 semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                        </div>
+                    </div>
+
+                    <!--CATEGORÍA: COCINAS -->
+                    <div class="categoria" id="cat-cocina" style="display:none;">
+                        <h3 class="categoria-titulo">Cocinas</h3>
+
+                        <div class="proyectos-grid">
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img/cocina.jpg" class="card-image" alt="cocina">
+
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Cocina con accesorios</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Cocina con accesorios y cajones, incluye mueble para el
+                                        lavamanos. Usted puede escojer el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$2,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 1 Semana</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\cocina azulejo.jpg" class="card-image" alt="cocina">
+
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Cocina piso con vitropiso</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Cocina completamente con vitropiso, sin accesorios, con
+                                        boquila y zoplo. Usted puede escojer el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$3,500 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 1 Semana</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\cocina_blanca.jpg" class="card-image" alt="cocina">
+
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Barra de cocina</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Construcción de una barra de cocina con azulejo con
+                                        detalles incluidos. Usted puede escojer el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$4,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 1 o 2 Semanas </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\barra_cocina_secciones.jpg" class="card-image" alt="cocina">
+
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Barra de cocina con secciones</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Construcción de una barra de cocina con azulejo con
+                                        detalles incluidos, secciones personalizadas, sin accesorios. Usted puede
+                                        escojer el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$5,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 Semanas </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\cocina estilo bar.jpg" class="card-image" alt="cocina">
+
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Barra de cocina estilo Bar</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Barra de cocina estilo Bar con azulejo y detalles (no
+                                        incluye ningun otra cosa mas que la barrita estilo bar y las especificaciones).
+                                        Usted puede escojer el diseño.</p>
+                                    <div class="card-footer">
+                                        <span class="precio">$2,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 1 Semana</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--  BAÑOS -->
+
+                    <div class="categoria" id="cat-banos" style="display:none;">
+                        <h3 class="categoria-titulo">Baños</h3>
+
+                        <div class="proyectos-grid">
+
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\remoledacion tina.jpg" alt="Baño" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title">Tina de baño con azulejo y un accesorio</h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Tina de baño con azulejo en las cuatro pardes y
+                                        accesorio con boquilla incluida. Usted puede escojer el diseño.</p>
+
+                                    <div class="card-footer">
+                                        <span class="precio">$3,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 1 Semana</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\remoledacion tina baño.jpg" alt="Baño" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title">Tina de baño con azulejo con iliminación<nav></nav>
+                                    </h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Tina de baño con azulejo en las cuatro pardes con
+                                        iluminación de una ventana y foco elegante. Usted puede escojer el diseño.</p>
+
+                                    <div class="card-footer">
+                                        <span class="precio">$4,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 Semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\remoledacion baño2.jpg" alt="Baño" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title">Remoledacion de baño pequeño<nav></nav>
+                                    </h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Remodelacion de baño pequeño con azulejo, azulejo en la
+                                        tina, vitropiso, accesorios. Usted puede escojer el diseño</p>
+
+                                    <div class="card-footer">
+                                        <span class="precio">$2,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 Semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\construccion baño.jpg" alt="Baño" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title">Construcción de baño completo<nav></nav>
+                                    </h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">construcción de baño mediano con azulejo, azulejo en la
+                                        tina, vitropiso, accesorios y todo lo necesario para su funcionamiento, Usted
+                                        puede escojer el diseño</p>
+
+                                    <div class="card-footer">
+                                        <span class="precio">$6,500 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 Semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\baño semilujos.jpg" alt="Baño" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title">Remoledación de baño pequeño semilujoso<nav></nav>
+                                    </h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Remoledacion de baño completo con accesorios semilujoso,
+                                        Usted puede escojer el diseño</p>
+
+                                    <div class="card-footer">
+                                        <span class="precio">$6,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 Semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\baño conpuerta.jpg" alt="Baño" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title">Remoledación de baño mediano semilujoso<nav></nav>
+                                    </h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Remoledacion de baño mediano sin accesorios, con puertas
+                                        de cristal. Usted puede escojer el diseño</p>
+
+                                    <div class="card-footer">
+                                        <span class="precio">$6,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 Semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+                            <!-- TARJETA -->
+                            <div class="proyecto-card">
+                                <div class="card-image-wrapper">
+                                    <img src="../img\baño simple.jpg" alt="Baño" class="card-image">
+                                    <div class="card-overlay">
+                                        <button class="btn-detalles">Ver Detalles</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title">Construcción baño simple<nav></nav>
+                                    </h3>
+                                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Reynosa</p>
+                                    <p class="card-description">Construcción de baño simple con azulejo y vitropiso, sin
+                                        acceso. Usted puede escojer el diseño</p>
+
+                                    <div class="card-footer">
+                                        <span class="precio">$6,000 MXN</span>
+                                        <span class="duracion"><i class="fas fa-clock"></i> 2 Semanas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FIN TARJETA -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Servicios Section -->
+        <section id="servicios" class="servicios-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <div class="servicios-grid">
+                    <div class="servicio-item">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <h4>Diseño</h4>
+                        <p>Creamos diseños personalizados adaptados a tu visión y presupuesto.</p>
+                    </div>
+                    <div class="servicio-item">
+                        <i class="fas fa-hammer"></i>
+                        <h4>Construcción</h4>
+                        <p>Ejecución profesional con materiales de calidad y equipo especializado.</p>
+                    </div>
+                    <div class="servicio-item">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Garantía</h4>
+                        <p>Todos nuestros proyectos incluyen garantía de calidad por 12 meses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto" class="contacto-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Contactanos</h2>
+                    <p class="section-subtitle">¿Tienes un proyecto en mente? Cuéntanos cómo podemos ayudarte.</p>
+                </div>
+
+                <div class="contacto-wrapper">
+                    <form class="contacto-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="direccion" name="direccion" placeholder="Tu dirección" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono (opcional)">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." rows="5"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </form>
+
+                    <div class="contacto-info">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <h4>Teléfono</h4>
+                            <p>+52 (899) XXX-XXXX</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Correo</h4>
+                            <p>info@construtech.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Ubicación</h4>
+                            <p>Reynosa, Tamaulipas, México</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 ConstruTech. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../publicjs/catalogo.js"></script>
+</body>
+
+</html>
